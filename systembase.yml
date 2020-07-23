@@ -17,7 +17,7 @@ spring:
           ignored-interfaces:
             - dockre0
           preferredNetworks:
-          - 36.133.97.90
+            - 36.133.97.90
   datasource:
     master:
       jdbc-url: jdbc:sqlserver://wcz.yiruan01.com;DatabaseName=cloudhis
