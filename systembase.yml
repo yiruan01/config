@@ -1,0 +1,89 @@
+#项目版本
+application:
+  version: 1.0.0
+  formattedVersion: (v1.0.0)
+
+server:
+  port: 80
+
+#spring设置
+spring:
+  profiles:
+    active: MSSql
+  application:
+    name: systembase
+  cloud:
+        inetutils:
+          ignored-interfaces:
+            - dockre0
+  datasource:
+    master:
+      jdbc-url: jdbc:sqlserver://wcz.yiruan01.com;DatabaseName=cloudhis
+      username: sa
+      password: ENC(afL/r/PkdUUZp8Jz0X7WBkGJNVdFr1V6)
+      driverClassName: com.microsoft.sqlserver.jdbc.SQLServerDriver
+      max-idle: 10
+      max-wait: 10000
+      min-idle: 5
+      initial-size: 5
+      validation-query: SELECT 1
+      test-on-borrow: false
+      test-while-idle: true
+      time-between-eviction-runs-millis: 18800
+    slave:
+      jdbc-url: jdbc:sqlserver://wcz.yiruan01.com;DatabaseName=cloudhis
+      username: sa
+      password: ENC(afL/r/PkdUUZp8Jz0X7WBkGJNVdFr1V6)
+      driverClassName: com.microsoft.sqlserver.jdbc.SQLServerDriver
+      max-idle: 10
+      max-wait: 10000
+      min-idle: 5
+      initial-size: 5
+      validation-query: SELECT 1
+      test-on-borrow: false
+      test-while-idle: true
+      time-between-eviction-runs-millis: 18800
+  data:
+    mongodb:
+      database: cloudhis
+      host: wcz.yiruan01.com
+      port: 27017
+      username: cz
+      password: ENC(R2k4yeYBfqoYR6PV2nsuCA==)
+  redis:
+    database: 0
+    host: wcz.yiruan01.com
+    password: ENC(R2k4yeYBfqoYR6PV2nsuCA==)
+    port: 6379
+    timeout: 1000
+  mvc:
+    date-format: yyyy-MM-dd HH:mm:ss
+  jackson:
+    default-property-inclusion: ALWAYS
+    time-zone: GMT+8
+    date-format: yyyy-MM-dd HH:mm:ss
+
+config:
+  jwt:
+    # 加密密钥 密钥属性不能太短 太短报错
+    secret: ENC(AJi7fNYGP1l/vH8HXv9pRzRXWnFQr6ac)
+    # token有效时长 秒
+    expire: 36000
+    # header 名称
+    header: Authorization
+
+eureka:
+  instance:
+    # 续约更新时间间隔（默认30秒）
+    leaseEexpirationDurationInSeconds: 30
+    # 续约到期时间（默认90秒）
+    leaseRenewalIntervalInSeconds: 10
+    preferIpAddress: true
+  servername: wcz.yiruan01.com
+  serverport: 8081
+  client:
+    healthcheck:
+      # 开启健康检查（需要spring-boot-starter-actuator依赖）
+      enabled: true
+    serviceUrl:
+      defaultZone: http://${eureka.servername}:${eureka.serverport}/eureka/
