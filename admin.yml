@@ -12,6 +12,10 @@ spring:
     active: MSSql
   application:
     name: admin
+  servlet:
+    multipart:
+      maxFileSize: 1000MB
+      maxRequestSize: 1000MB
   cloud:
       inetutils:
         ignored-interfaces:
