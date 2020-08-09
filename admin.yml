@@ -62,6 +62,8 @@ spring:
     timeout: 1000
   mvc:
     date-format: yyyy-MM-dd HH:mm:ss
+    async:
+      request-timeout: 100000
   jackson:
     default-property-inclusion: ALWAYS
     time-zone: GMT+8
