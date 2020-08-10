@@ -18,7 +18,7 @@ spring:
             - dockre0
   datasource:
     master:
-      jdbc-url: jdbc:sqlserver://wcz.yiruan01.com;DatabaseName=cloudhis
+      jdbc-url: jdbc:sqlserver://localhost;DatabaseName=cloudhis
       username: sa
       password: ENC(afL/r/PkdUUZp8Jz0X7WBkGJNVdFr1V6)
       driverClassName: com.microsoft.sqlserver.jdbc.SQLServerDriver
@@ -31,7 +31,7 @@ spring:
       test-while-idle: true
       time-between-eviction-runs-millis: 18800
     slave:
-      jdbc-url: jdbc:sqlserver://wcz.yiruan01.com;DatabaseName=cloudhis
+      jdbc-url: jdbc:sqlserver://localhost;DatabaseName=cloudhis
       username: sa
       password: ENC(afL/r/PkdUUZp8Jz0X7WBkGJNVdFr1V6)
       driverClassName: com.microsoft.sqlserver.jdbc.SQLServerDriver
@@ -46,13 +46,13 @@ spring:
   data:
     mongodb:
       database: cloudhis
-      host: wcz.yiruan01.com
+      host: localhost
       port: 27017
       username: cz
       password: ENC(R2k4yeYBfqoYR6PV2nsuCA==)
   redis:
     database: 0
-    host: wcz.yiruan01.com
+    host: localhost
     password: ENC(R2k4yeYBfqoYR6PV2nsuCA==)
     port: 6379
     timeout: 1000
