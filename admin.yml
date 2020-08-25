@@ -105,3 +105,27 @@ fdfs:
   storagePort: 8888
   trackerList: 
     - 47.108.203.35:22122
+
+############  actuator监控  ############
+management:
+  health:
+    diskSpace:
+      enabled: true
+    db:
+      enabled: true
+    redis:
+      enabled: true
+    mongo:
+      enabled: true
+    elasticsearch:
+      enabled: false
+    mail:
+      enabled: false
+  endpoint:
+    health:
+      show-details: always
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+      base-path: /actuator
