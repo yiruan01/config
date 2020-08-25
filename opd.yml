@@ -87,3 +87,27 @@ eureka:
       enabled: true
     serviceUrl:
       defaultZone: http://${eureka.servername}:${eureka.serverport}/eureka/
+
+############  actuator监控  ############
+management:
+  health:
+    diskSpace:
+      enabled: true
+    db:
+      enabled: true
+    redis:
+      enabled: true
+    mongo:
+      enabled: true
+    elasticsearch:
+      enabled: false
+    mail:
+      enabled: false
+  endpoint:
+    health:
+      show-details: always
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+      base-path: /actuator
